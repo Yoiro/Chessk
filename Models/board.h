@@ -10,7 +10,7 @@ class Board: public QObject
     Q_OBJECT
 public:
     //args
-    Case* cases[8][8];
+    QList<QList<Case*>> cases;
 
     //canon
     Board(QObject* parent = Q_NULLPTR);

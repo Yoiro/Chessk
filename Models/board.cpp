@@ -10,22 +10,33 @@ Board::Board(QObject *parent): QObject(parent)
     }
 }
 
-Board::Board(Board &origin)
+Board::Board(Board &origin): QObject()
 {
-    this->cases = origin.cases;
+    for(int i = 0; i < 8; i++){
+        for(int j = 0; j < 8; j++){
+            cases[i][j] = origin.cases[i][j];
+        }
+    }
 }
 
 Board &Board::operator=(Board &src)
 {
     if(this != &src){
-        this->cases = src.cases;
+        for(int i = 0; i < 8; i++){
+            for(int j = 0; j < 8; j++){
+                cases[i][j] = src.cases[i][j];
+            }
+        }
     }
     return *this;
 }
 
 Board::~Board()
 {
-
+    for(int i = 0; i < 8; i++){
+        qDeleteAll(cases.at(i));
+    }
+    delete this;
 }
 
 
