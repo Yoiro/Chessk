@@ -1,5 +1,6 @@
 #include "board.h"
 
+using namespace board;
 
 Board::Board(QObject *parent): QObject(parent)
 {

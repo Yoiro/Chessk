@@ -2,13 +2,14 @@
 #define PIECE_H
 
 #include <QObject>
-
+#include "Models/board.h"
 
 #include <memory>
 #include <set>
 #include <typeinfo>
 #include <iosfwd>
 
+using namespace board;
 
 class Piece : public QObject
 {
