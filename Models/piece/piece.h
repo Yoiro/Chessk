@@ -23,6 +23,13 @@ public:
     using Suit_t = config::BoardConfig::SuitClass_t;
     using Class_t = config::BoardConfig::PieceClass_t;
 
+    //canon
+    Piece(QObject* parent = Q_NULLPTR);
+    Piece(Piece& origin);
+    Piece& operator=(Piece& src);
+    ~Piece();
+
+
     /**
      * The ::board::Board in wich the Piece exist.
      *

@@ -2,16 +2,32 @@
 #define BISHOP_H
 
 #include <QObject>
+#include "Models/board.h"
+#include "piece.h"
 
-class Bishop : public QObject
+namespace Models
 {
-    Q_OBJECT
-public:
-    explicit Bishop(QObject *parent = nullptr);
+    namespace piece
+    {
+        class Bishop
+        : public virtual Piece
+                  , public QObject
+        {
+            Q_OBJECT
+        public:
+            Bishop(board::Board &b, Position_t const &pos, Suit_t const &s, Class_t const &pc);
+            explicit Bishop(QObject *parent=nullptr);
 
-signals:
+            //canon
+            Bishop(QObject* parent = Q_NULLPTR);
+            Bishop(Bishop& origin);
+            Bishop& operator=(Bishop& src);
+            ~Bishop();
 
-public slots:
-};
+        protected:
+            virtual void calcTrajectory() override;
+        };
+    }
+}
 
 #endif // BISHOP_H

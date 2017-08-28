@@ -2,16 +2,33 @@
 #define ROOK_H
 
 #include <QObject>
+#include "Models/board.h"
+#include "piece.h"
 
-class Rook : public QObject
+namespace Models
 {
-    Q_OBJECT
-public:
-    explicit Rook(QObject *parent = nullptr);
+    namespace piece
+    {
+        class Rook
+        : public virtual Piece
+        , public QObject
+        {
+        Q_OBJECT
+        public:
+            Rook(board::Board &b, Position_t const &pos, Suit_t const &s, Class_t const &pc);
+            explicit Rook(QObject *parent=nullptr);
 
-signals:
+            //canon
+            Rook(QObject* parent = Q_NULLPTR);
+            Rook(Rook& origin);
+            Rook& operator=(Rook& src);
+            ~Rook();
 
-public slots:
-};
+
+        protected:
+            virtual void calcTrajectory() override;
+        };
+    }
+}
 
 #endif // ROOK_H

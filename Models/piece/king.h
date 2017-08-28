@@ -2,16 +2,32 @@
 #define KING_H
 
 #include <QObject>
+#include "Models/board.h"
+#include "piece.h"
 
-class King : public QObject
+namespace Models
 {
-    Q_OBJECT
-public:
-    explicit King(QObject *parent = nullptr);
+    namespace piece
+    {
+        class King
+        : public virtual Piece
+                  , public QObject
+        {
+            Q_OBJECT
+        public:
+            King(board::Board &b, Position_t const &pos, Suit_t const &s, Class_t const &pc);
+            explicit King(QObject *parent=nullptr);
 
-signals:
+            //canon
+            King(QObject* parent = Q_NULLPTR);
+            King(King& origin);
+            King& operator=(King& src);
+            ~King();
 
-public slots:
-};
 
+        protected:
+            virtual void calcTrajectory() override;
+        };
+    }
+}
 #endif // KING_H

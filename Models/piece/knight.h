@@ -2,16 +2,33 @@
 #define KNIGHT_H
 
 #include <QObject>
+#include "Models/board.h"
+#include "piece.h"
 
-class Knight : public QObject
+namespace Models
 {
-    Q_OBJECT
-public:
-    explicit Knight(QObject *parent = nullptr);
+    namespace piece
+    {
+        class Knight
+        : public virtual Piece
+                  , public QObject
+        {
+            Q_OBJECT
+        public:
+            Knight(board::Board &b, Position_t const &pos, Suit_t const &s, Class_t const &pc);
+            explicit Rook(QObject *parent=nullptr);
 
-signals:
+            //canon
+            Knight(QObject* parent = Q_NULLPTR);
+            Knight(Knight& origin);
+            Knight& operator=(Knight& src);
+            ~Knight();
 
-public slots:
-};
+
+        protected:
+            virtual void calcTrajectory() override;
+        };
+    }
+}
 
 #endif // KNIGHT_H
