@@ -27,9 +27,4 @@ void MoveGenerator::move(Piece *piece)
 
     }
     else if(Pawn* p = dynamic_cast<Pawn*>(piece)){
-
-    }
-    else if(Rook* r= dynamic_cast<Rook*>(piece)){
-
-    }
 }
