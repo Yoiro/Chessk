@@ -1,9 +1,14 @@
 #ifndef BOARD_H
 #define BOARD_H
 
+#include "config/BoardConfig.h"
+#include "util/
+
 #include "case.h"
 #include <QList>
 #include <QObject>
+
+
 
 class Board: public QObject
 {
