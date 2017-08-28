@@ -1,6 +1,35 @@
 #include "movegenerator.h"
 
+#include "Models/piece/king.h"
+#include "Models/piece/queen.h"
+#include "Models/piece/bishop.h"
+#include "Models/piece/knight.h"
+#include "Models/piece/pawn.h"
+#include "Models/piece/rook.h"
+
 MoveGenerator::MoveGenerator()
 {
 
+}
+
+void MoveGenerator::move(Piece *piece)
+{
+    if (King* k = dynamic_cast<King*>(piece)){
+
+    }
+    else if (Queen* q = dynamic_cast<Queen*>(piece)){
+
+    }
+    else if(Bishop* b = dynamic_cast<Bishop*>(piece)){
+
+    }
+    else if(Knight *k = dynamic_cast<Knight*>(piece)){
+
+    }
+    else if(Pawn* p = dynamic_cast<Pawn*>(piece)){
+
+    }
+    else if(Rook* r= dynamic_cast<Rook*>(piece)){
+
+    }
 }

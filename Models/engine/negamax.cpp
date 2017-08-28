@@ -42,68 +42,54 @@ int NegaMax::negaMax(int depth){
 
 }
 
-int NegaMax::testMinMax(int depth, int nodeIndex, bool isMax, int scores[], int h)
-{
-    if (depth == h ){
-        return scores[nodeIndex];
-    }
-    if (isMax){
-        return std::max(testMinMax(depth+1, nodeIndex *2, false, scores, h),
-                   testMinMax(depth+1, nodeIndex *2+1, false, scores, h));
-    } else{
-        return std::min(testMinMax(depth +1, nodeIndex *2, false, scores, h),
-                   testMinMax(depth +1, nodeIndex *2 + 1, false, scores, h));
-    }
-}
-
-int max(Board* board, int depth){
-    /*if(depth == 0){
+int max(QList<QList<Case*>> board, int depth){
+    if(depth == 0){
         return eval(board);
     }
     int max = -Q_INFINITY;
     int tmp;
     for (int i = 0; i < 8; i++){
         for (int j = 0; j < 8; j++){
-            if(board->cases[i][j] == 0){
-                board->cases[i][j] = 2;
+            if(board[i][j] == 0){
+                board[i][j] = 2;
                 tmp = min(board, depth-1);
 
                 if(tmp > max){
                     max = tmp;
                 }
-                board->cases[i][j] = 0;
+                board[i][j] = 0;
             }
         }
-    }*/
+    }
     return 0;
 }
 
-int min(Board* board, int depth){
-    /*if(depth == 0 || winner(board) !=0 ){
+int min(QList<QList<Case*>> board, int depth){
+    if(depth == 0 || winner(board) !=0 ){
         return eval(board);
     }
     int min = 10000;
     int tmp;
     for (int i = 0; i < 8; i++){
         for (int j = 0; j < 8; j++){
-            if(board->cases[i][j] == 0){
-                board->cases[i][j] = 1;
+            if(cases[i][j] == 0){
+                cases[i][j] = 1;
                 tmp = max(board, depth-1);
                 if( tmp < min ) {
                     min = tmp;
                 }
-                board->cases[i][j] = 0;
+                cases[i][j] = 0;
             }
         }
-    }*/
+    }
     return 0;
 }
 
-int eval(Board* board){
+int eval(QList<QList<Case*>> board){
     int winner, nbPieces = 0;
     for (int i = 0; i < 8; i++){
         for (int j = 0; j < 8; j++){
-            if(board->cases[i][j] != 0){
+            if(board[i][j] != 0){
                 nbPieces ++;
             }
         }
