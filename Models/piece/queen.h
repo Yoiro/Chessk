@@ -15,8 +15,7 @@ namespace Models
         {
             Q_OBJECT
         public:
-            Rook(board::Board &b, Position_t const &pos, Suit_t const &s, Class_t const &pc);
-explicit Rook(QObject *parent=nullptr);
+            Queen(board::Board &b, Position_t const &pos, Suit_t const &s, Class_t const &pc);
 
             //canon
             Queen(QObject* parent = Q_NULLPTR);

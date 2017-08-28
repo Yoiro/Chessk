@@ -16,7 +16,6 @@ namespace Models
             Q_OBJECT
         public:
             Bishop(board::Board &b, Position_t const &pos, Suit_t const &s, Class_t const &pc);
-            explicit Bishop(QObject *parent=nullptr);
 
             //canon
             Bishop(QObject* parent = Q_NULLPTR);

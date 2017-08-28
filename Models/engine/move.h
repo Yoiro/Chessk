@@ -13,9 +13,9 @@ namespace move {
 
     class Generator{
     private:
-        Board* board;
+        ::board::Board* board;
     public:
-        Generator(Board* board = new Board());
+        Generator(::board::Board* board = new ::board::Board());
         bool isMoveLegal(Move* move);
     };
 

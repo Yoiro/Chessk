@@ -7,20 +7,19 @@
 
 namespace board {
 
+    class Board: public QObject
+    {
+        Q_OBJECT
+    public:
+        //args
+        QList<QList<Case*>> cases;
 
-class Board: public QObject
-{
-    Q_OBJECT
-public:
-    //args
-    QList<QList<Case*>> cases;
-
-    //canon
-    Board(QObject* parent = Q_NULLPTR);
-    Board(Board& origin);
-    Board& operator=(Board& src);
-    ~Board();
-};
+        //canon
+        Board(QObject* parent = Q_NULLPTR);
+        Board(Board& origin);
+        Board& operator=(Board& src);
+        ~Board();
+    };
 }
 
 #endif // BOARD_H

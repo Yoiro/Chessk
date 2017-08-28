@@ -1,12 +1,12 @@
 #include "move.h"
 
 
-::move::Generator::MoveGenerator(Board* board)
+::move::Generator::Generator(::board::Board* board)
 {
     this->board = board;
 }
 
-bool ::move::Generator::isMoveLegal(Move* move)
+bool move::Generator::isMoveLegal(Move* move)
 {
     Case* destination = move->destination;
     Case* origin = move->origin;
@@ -74,14 +74,14 @@ move::Move::Move(Piece *piece, Case *origin, Case *destination)
 
 move::Move::Move(move::Move &origin)
 {
-    this->piece = new Piece(origin.piece);
+    //this->piece = new Piece(origin.piece);
     this->origin = new Case(origin.origin);
     this->destination = new Case(origin.destination);
 }
 
 move::Move::execute()
 {
-    if(Generator::isMoveLegal(this)){
+    if(::move::Generator::isMoveLegal(this)){
         //move the piece
     }
 }

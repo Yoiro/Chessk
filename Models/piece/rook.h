@@ -19,7 +19,6 @@ namespace Models
             explicit Rook(QObject *parent=nullptr);
 
             //canon
-            Rook(QObject* parent = Q_NULLPTR);
             Rook(Rook& origin);
             Rook& operator=(Rook& src);
             ~Rook();

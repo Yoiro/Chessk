@@ -16,7 +16,7 @@ namespace Models
             Q_OBJECT
         public:
             Knight(board::Board &b, Position_t const &pos, Suit_t const &s, Class_t const &pc);
-            explicit Rook(QObject *parent=nullptr);
+            explicit Knight(QObject *parent=nullptr);
 
             //canon
             Knight(QObject* parent = Q_NULLPTR);

@@ -19,7 +19,6 @@ namespace Models
             explicit King(QObject *parent=nullptr);
 
             //canon
-            King(QObject* parent = Q_NULLPTR);
             King(King& origin);
             King& operator=(King& src);
             ~King();

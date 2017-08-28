@@ -8,8 +8,7 @@
 #include <set>
 #include <typeinfo>
 #include <iosfwd>
-
-using namespace board;
+#include "config/boardconfig.hpp"
 
 class Piece : public QObject
 {
@@ -19,16 +18,13 @@ class Piece : public QObject
 
 public:
 
-    using Position_t = config::BoardConfig::Position_t;
-    using Suit_t = config::BoardConfig::SuitClass_t;
-    using Class_t = config::BoardConfig::PieceClass_t;
+    using Position_t = ::chesspp::config::BoardConfig::Position_t;
+    using Suit_t = ::chesspp::config::BoardConfig::SuitClass_t;
+    using Class_t = ::chesspp::config::BoardConfig::PieceClass_t;
 
     //canon
-    Piece(QObject* parent = Q_NULLPTR);
     Piece(Piece& origin);
     Piece& operator=(Piece& src);
-    ~Piece();
-
 
     /**
      * The ::board::Board in wich the Piece exist.

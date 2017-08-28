@@ -19,7 +19,6 @@ namespace Models
             explicit Pawn(QObject *parent=nullptr);
 
             //canon
-            Pawn(QObject* parent = Q_NULLPTR);
             Pawn(Pawn& origin);
             Pawn& operator=(Pawn& src);
             ~Pawn();
