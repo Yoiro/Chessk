@@ -108,6 +108,7 @@ phony.c
 *.vcxproj
 *vcproj.*.*.user
 *vcxproj.*
+/*.user
 
 # gcov files
 *.gcda
