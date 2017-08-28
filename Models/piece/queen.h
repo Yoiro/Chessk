@@ -14,4 +14,10 @@ signals:
 public slots:
 };
 
+
+void Queen::calculateTrajectory()
+{
+    using Dir = util Direction;
+}
+
 #endif // QUEEN_H

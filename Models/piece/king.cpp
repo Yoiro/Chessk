@@ -3,4 +3,9 @@
 King::King(QObject *parent) : QObject(parent)
 {
 
+
+
+
+
+
 }
