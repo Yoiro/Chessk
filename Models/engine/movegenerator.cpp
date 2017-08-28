@@ -4,3 +4,8 @@ MoveGenerator::MoveGenerator()
 {
 
 }
+
+void MoveGenerator::move(Piece *piece)
+{
+
+}

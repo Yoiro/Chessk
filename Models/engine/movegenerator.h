@@ -7,6 +7,7 @@ class MoveGenerator
 {
 public:
     MoveGenerator();
+    void move(Piece* piece);
 };
 
 #endif // MOVEGENERATOR_H
